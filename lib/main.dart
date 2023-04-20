@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news/screens/screens.dart';
+import 'package:news/theme/theme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -7,16 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: myTheme,
+      initialRoute: 'tabs-page',
+      routes: {
+        'tabs-page': (_)=> const TabsScreen()
+      }
+      
     );
   }
 }
