@@ -5,6 +5,7 @@ class NavigationProvider extends ChangeNotifier{
   int _actualPage = 0;
   final PageController _pageController = PageController();
 
+  
   int get actualPage =>_actualPage;
   set actualPage(int value){
     _actualPage = value;

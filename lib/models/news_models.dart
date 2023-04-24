@@ -35,7 +35,7 @@ class NewsResponse {
 class Article {
     Article({
         required this.source,
-        required this.author,
+         this.author,
         required this.title,
         this.description,
         required this.url,
@@ -45,7 +45,7 @@ class Article {
     });
 
     Source source;
-    String author;
+    String? author;
     String title;
     dynamic description;
     String url;
@@ -78,11 +78,11 @@ class Article {
 
 class Source {
     Source({
-        required this.id,
+        this.id,
         required this.name,
     });
 
-    String id;
+    String? id;
     String name;
 
     factory Source.fromJson(Map<String, dynamic> json) => Source(

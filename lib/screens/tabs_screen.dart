@@ -18,6 +18,24 @@ class TabsScreen extends StatelessWidget {
   }
 }
 
+class _Pages extends StatelessWidget {
+  const _Pages();
+
+  @override
+  Widget build(BuildContext context) {
+    final navigationProvider = Provider.of<NavigationProvider>(context);
+
+    return PageView(
+      physics: const NeverScrollableScrollPhysics(),
+      controller: navigationProvider.pageController,
+      children: const [
+        Tab1Screen(),
+        Tab2Screen()
+      ],
+    );
+  }
+}
+
 class _NavigationItems extends StatelessWidget {
   const _NavigationItems();
   @override
@@ -32,26 +50,6 @@ class _NavigationItems extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.person_outlined),label: 'For You'),
         BottomNavigationBarItem(icon: Icon(Icons.public_outlined),label: 'Headers'),
       ]
-    );
-  }
-}
-
-class _Pages extends StatelessWidget {
-  const _Pages();
-
-  @override
-  Widget build(BuildContext context) {
-    final navigationProvider = Provider.of<NavigationProvider>(context);
-
-    return PageView(
-      physics: const BouncingScrollPhysics(),
-      controller: navigationProvider.pageController,
-      children: [
-        const Tab1Screen(),
-        Container(
-          color: Colors.green,
-        )
-      ],
     );
   }
 }
